@@ -46,14 +46,15 @@
 				상세주소 : <br />
   		</div>
  	 <div class="grid-item" id="content">
-  				${cust.customerID}<br />
-				${cust.customerName}<br />
-				${cust.ssn}<br />
+  				${user.customerID}<br />
+				${user.customerName}<br />
+				${user.ssn}<br />
 				남 <br />
-				${cust.phone}<br />
-				${cust.postalcode}<br />
-				${cust.city}<br />
-				${cust.address}<br />
+				${user.phone}<br />
+				${user.city}<br />
+				${user.address}<br />
+				${user.postalcode}<br />
+				
   		</div>
  	 </div>
 	  
@@ -73,7 +74,7 @@
 
 <script>
 $('#update_btn').attr('style','cursor:pointer').click(function(){
-	location.assign('${ctx}/customer.do?cmd=cust_retrieve&page=update&customer_id=${cust.customerID}');
+	location.assign('${ctx}/move/customer/update');
 });
 $('#list_btn').attr('style','cursor:pointer').click(function(){
 	location.assign('${ctx}/customer.do?cmd=cust_list&page=list');

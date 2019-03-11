@@ -3,18 +3,18 @@ package com.bit_etland.web.service;
 import java.util.List;
 import java.util.Map;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.bit_etland.web.domain.CustomerDTO;
+import com.bit_etland.web.mapper.CustomerMapper;
 import com.bit_etland.web.proxy.Proxy;
 @Service
 public class CustomerServiceImpl implements CustomerService{
-
+	@Autowired CustomerMapper customerMapper;
 	@Override
-	public void registCustomer(CustomerDTO cus) {
-		// TODO Auto-generated method stub
-		
-	}
+	public void registCustomer(CustomerDTO cust) {}
+	
 
 	@Override
 	public List<CustomerDTO> bringAllCustomersList(Proxy pxy) {
@@ -24,14 +24,12 @@ public class CustomerServiceImpl implements CustomerService{
 
 	@Override
 	public List<CustomerDTO> retrieveCustomers(Proxy pxy) {
-		// TODO Auto-generated method stub
 		return null;
 	}
 
 	@Override
-	public CustomerDTO retrieveCustomer(CustomerDTO cus) {
-		// TODO Auto-generated method stub
-		return null;
+	public CustomerDTO retrieveCustomer(CustomerDTO cust) {
+		return customerMapper.selectCustomer(cust);
 	}
 
 	@Override
@@ -41,14 +39,14 @@ public class CustomerServiceImpl implements CustomerService{
 	}
 
 	@Override
-	public boolean existsCustomerID(CustomerDTO cus) {
+	public boolean existsCustomerID(CustomerDTO cust) {
 		// TODO Auto-generated method stub
 		return false;
 	}
 
 	@Override
-	public void modifyCustomer(CustomerDTO cus) {
-		// TODO Auto-generated method stub
+	public void modifyCustomer(CustomerDTO cust) {
+		customerMapper.updateCustomer(cust);
 		
 	}
 

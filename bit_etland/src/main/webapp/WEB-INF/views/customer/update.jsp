@@ -19,19 +19,17 @@
   </div>
   <div class="col-xs-6">
 		<form id="form">
-  				 아이디:  ${cust.customerID}<br />
-				 이름 : ${cust.customerName}<br />
-				생년월일 : ${cust.ssn}<br />
+  				 아이디: <input type="text" name=customerID value="${user.customerID}" readonly/><br />
+				 이름 : <input type="text" name="customerName" value="${user.customerName}" readonly/><br />
+				생년월일 :<input type="text" name="ssn" value="${user.ssn}" readonly/><br />
 				성별 : 남 <br />
-				전화번호 : <input type="text" name="phone" placeholder="${cust.phone}"/><br />
-				우편번호 : <input type="text" name="postal_code" placeholder="${cust.postalcode}"/><br />
-				지번주소 : <input type="text" name="city" placeholder="${cust.city}"/><br />
-				상세주소 : <input type="text" name="address" placeholder="${cust.address}"/><br />
-				임시비밀번호 : <input type="text" name="password" placeholder="임시비밀번호"/><br />
-			   	<input type="hidden" name="customerID" value="${cust.customerID}" />
-				 <input type="hidden" name="cmd" value="cust_update" />
-   				 <input type="hidden" name="dir" value="customer" />
-   				 <input type="hidden" name="page" value="detail" />
+				전화번호 : <input type="text" name="phone" value="${user.phone}"/><br />
+				우편번호 : <input type="text" name="postalcode" value="${user.postalcode}"/><br />
+				지번주소 : <input type="text" name="city" value="${user.city}"/><br />
+				상세주소 : <input type="text" name="address" value="${user.address}"/><br />
+				임시비밀번호 : <input type="text" name="password" value="${user.password}"/><br />
+
+
 			
 			</form>
   <div class="grid-item">
@@ -51,7 +49,7 @@
 <script>
 $('#update_access').attr('style','cursor:pointer').click(function(){
 	 var form = $('#form');
-	 form.attr('action','${ctx}/customer.do');
+	 form.attr('action','${ctx}/customer/update');
 	 form.attr('method','post');
 	 form.submit();
 });

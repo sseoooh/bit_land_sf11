@@ -20,7 +20,7 @@
 	<div class="input-group input-group-lg">
  		 <span class="input-group-addon" id="sizing-addon1">비밀번호</span>
  		 <input type="text" class="form-control" placeholder="password" aria-describedby="sizing-addon1" 
-  				name="cpassword" id="password" value="1234"/>
+  				name="password" id="password" value="1234"/>
 	</div>
   <h4>가입한 ID, 비밀번호를 입력하세요.</h4>
   <div class="row">
