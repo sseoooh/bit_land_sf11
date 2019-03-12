@@ -1,8 +1,11 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
-<%@ taglib uri="http://tiles.apache.org/tags-tiles" prefix="tiles" %>
-<!DOCTYPE html>
-<html>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<!--
+	@Author : Jeon SEOWOO (sseoooh@naver.com)
+	@Date : 2019. 3. 12. 오후 3:30:18
+	@File Name : *.jsp
+	@Desc :
+-->
+
 <head>
 		<meta charset="UTF-8">
     	<meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -15,21 +18,3 @@
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
 </head>
-<body>
-	<div id="wrapper" class="grid-full-container container-fluid">
-		<div class ="grid-item">
-          <tiles:insertAttribute name="top" />
-		</div>
-        <div class ="grid-item">
-          <tiles:insertAttribute name="nav" />
-        </div>
-        <div class ="grid-item">
-          <tiles:insertAttribute name="content" />
-        </div>
-        <div class ="grid-item">
-          <tiles:insertAttribute name="bottom" />
-       </div>
- </div>
-
-</body>
-</html>
