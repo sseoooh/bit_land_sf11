@@ -2,7 +2,7 @@
 <!DOCTYPE tiles-definitions PUBLIC
        "-//Apache Software Foundation//DTD Tiles Configuration 3.0//EN"
        "http://tiles.apache.org/dtds/tiles-config_3_0.dtd">
-       <!-- ajax start -->
+       
 <tiles-definitions>
   <definition name="public" template="/WEB-INF/views/layouts/intro.jsp">
     <put-attribute name="top" value="/WEB-INF/views/home/top.jsp" />
@@ -31,4 +31,14 @@
   <definition name="public:*/*.tiles" extends="public">
     <put-attribute name="content" value="/WEB-INF/views/{1}/{2}.jsp" />
   </definition>
+     <definition name="no_tiles" template="/WEB-INF/views/layouts/no_template.jsp">
+    	<put-attribute name="no_template" value="" />
+  </definition>
+  <definition name="*.jsp" extends="no_tiles">
+    <put-attribute name="no_template" value="/WEB-INF/views/{1}.jsp" />
+    
+    
+  </definition>
+  
+  
 </tiles-definitions>
