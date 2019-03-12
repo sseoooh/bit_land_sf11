@@ -27,7 +27,7 @@ public class CustomerController {
 	@RequestMapping(value="/signin", method=RequestMethod.POST)
 	public String signin(@ModelAttribute CustomerDTO param,
 						Model session) {
-		logger.info("\n --------- MemberController {} !! ----------","signin");
+		logger.info("\n --------- CustomerController {} !! ----------","signin");
 		System.out.println("==============signin==============");
 		customer = customerService.retrieveCustomer(param);
 		if(customer != null) 
