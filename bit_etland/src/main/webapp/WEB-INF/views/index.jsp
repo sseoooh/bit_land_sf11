@@ -34,8 +34,9 @@
         <div class="item5" id="footer" >
         </div>
 	</div>
+	
 </body>
 <script>
-app.context.init('${ctx}')
+app.path.init('${ctx}')
 </script>
 </html>

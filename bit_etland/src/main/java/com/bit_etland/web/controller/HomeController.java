@@ -25,7 +25,8 @@ public class HomeController {
 				HttpServletRequest request) {
 		logger.info("\n --------- Welcome {} !! ----------","Home");
 		pxy.setContext();
-		return "index.jsp";
+		System.out.println("나오나요?");
+		return "algorithm.jsp";
 	
 	}
 	@RequestMapping("/move/{dir}/{page}")
