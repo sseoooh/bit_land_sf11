@@ -9,8 +9,35 @@ var algorithm =  algorithm || {};
 			};
 			let setContentView=()=>{
 				$.getScript($.js()+'/compo.js',()=>{
-				/*$('body').html($$.div({id: 'test', clazz:'clazz'}))
-				})*/
+				nav();
+				remove();
+				question('등차수열의 합계');
+				$('#right_content').prepend($$.div({id:'right_start'}));
+				$('#leave_a_comment').before('<div id="right_end"/>')
+				$('#right_start').nextUntil('#right_end')
+					.wrapAll('<div id="new_div"></div>');
+				var str = $('#new_div').html();
+				$('#new_div').remove();
+				$('#right_end').remove();
+				let arr = [
+					{id:'a' , val:'등차수열의 합계'},
+					{id:'b' , val:'등비수열의 합계'},
+					{id:'c' , val:'팩토리얼수열의 합계'},
+					{id:'d' , val:'피보나치수열의 합계'},
+					];
+				$.each(arr, (i,j)=>{
+						$('#right_start').append(str);
+						$('#question').attr('id','question_'+j.id);
+						$('#question_'+j.id).text(j.val);
+					
+						
+				/*$.each([1,2,3],(i,j)=>{
+					$('#right_start').append(str);*/
+				});
+				})
+			};//get script끝
+			
+			let nav=()=>{
 				$('#nav').children().eq(0)
 				.html($$.a({id: 'seq', url: '#'}).text('수열'))
 				$('#nav').children().eq(1)
@@ -22,9 +49,11 @@ var algorithm =  algorithm || {};
 				$('#nav').append($$.li({id:''}));
 				$('#nav').children().eq(4)
 				.html($$.a({id: 'app'}).text('응용'));
+			};
+			
+			let question=(x)=>{
 				
-				$('#que_1').text('등차수열의 합계');
-				$('#que_2').text('등비수열의 합계');
+				$('#question').text(x);
 				inputForm();
 				
 				$('#answer_btn_1').text('결과').addClass('cursor').click(()=>{
@@ -49,10 +78,21 @@ var algorithm =  algorithm || {};
 				$('#reset_btn_1').text('리셋').addClass('cursor').click(()=>{
 					inputForm();
 				});
-	
-			})//get script끝
-				
-		};
+			};	
+			
+			let remove=()=>{
+				/*$('body').html($$.div({id: 'test', clazz:'clazz'}))
+				})*/				
+			
+				$('#que_1').text('등차수열의 합계');
+				/*$('#que_2').text('등비수열의 합계');*/
+				$('#que_2').remove();
+				/*$('#que_2').before('<div id="que_start/>');
+				$('#que_3').after('<div id="que_end/>');
+				$('que_start').nextUntil('que_end').wrap().remove();*/
+			};
+			
+		
 		
 		let inputForm = ()=>{
 			$('#passion').html($$.form({id:'form'})
@@ -68,6 +108,9 @@ var algorithm =  algorithm || {};
 			return {init:init,
 				onCreate:onCreate};
 		})();
+		
+		
+		
 	
 	algorithm.$={
 			init : (x)=>{
