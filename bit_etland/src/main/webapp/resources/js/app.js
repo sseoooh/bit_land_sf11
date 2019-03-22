@@ -1,14 +1,14 @@
 var app = app || {};
 app = (()=>{
-	var init=x=>{
+	let init=x=>{
 		app.session.init(x);
 		alert(app.$.ctx());
 		onCreate();
 	};
-	var onCreate=()=>{//서비스
+	let onCreate=()=>{//서비스
 		setContentView();
 	};
-	var setContentView=()=>{//화면부분
+	let setContentView=()=>{//화면부분
 		$('#header').empty().text('헤더');
 		$('#menu').empty().text('메뉴');
 		$('#main').empty().text('메인');
@@ -26,16 +26,16 @@ app = (()=>{
 })();
 
 app.session =(()=>{
-	var init=x=>{
+	let init=x=>{
 		onCreate(x);
 	};
-	var onCreate=(x)=>{
+	let onCreate=(x)=>{
 		sessionStorage.setItem('ctx', x);
 		sessionStorage.setItem('js', x+'resources/js');
 		sessionStorage.setItem('img', x+'resources/img');
 		sessionStorage.setItem('css', x+'resources/css');
 	};
-	var setContentView=(x)=>{
+	let setContentView=(x)=>{
 		
 	};
 	return{init:init};
